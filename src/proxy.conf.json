@@ -1,0 +1,7 @@
+{
+  "/api/login*": {
+      "target": "https://lectorium.herokuapp.com",
+      "secure": false,
+      "logLevel": "debug"
+  }
+}

@@ -23,7 +23,7 @@ export function reducer(state = initialState, action: All): State {
       }
     }
     default: {
-      return state
+      return state;
     }
   }
 }

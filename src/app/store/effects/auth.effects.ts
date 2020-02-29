@@ -17,7 +17,7 @@ export class AuthEffects {
   ) { }
 
   @Effect()
-  Login$: Observable<any> = this.actions.pipe(
+  LogIn: Observable<any> = this.actions.pipe(
     ofType(AuthActionTypes.LOGIN),
     map((action: LogIn) => action.payload),
     switchMap(payload => {
@@ -28,6 +28,15 @@ export class AuthEffects {
             return new LogInSuccess({ token: user.token });
           })
         );
+    })
+  );
+
+  @Effect({ dispatch: false })
+  LogInSuccess: Observable<any> = this.actions.pipe(
+    ofType(AuthActionTypes.LOGIN_SUCCESS),
+    tap((user) => {
+      localStorage.setItem('token', user.payload.token);
+      this.router.navigateByUrl('/');
     })
   );
 }
