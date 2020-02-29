@@ -1,0 +1,37 @@
+<mat-card class="container">
+
+<mat-card-title>Sign Up</mat-card-title>
+
+<form class="example-form" (ngSubmit)="onSubmit()">
+  
+  <mat-form-field class="example-full-width">
+    <mat-label>Enter name:</mat-label>
+    <input matInput placeholder="test" [(ngModel)]="user.name" id="name">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Enter surname:</mat-label>
+    <input matInput placeholder="test" [(ngModel)]="user.surname" id="surname">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Enter email:</mat-label>
+    <input matInput placeholder="test" [(ngModel)]="user.email" id="email">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Enter phone:</mat-label>
+    <input matInput placeholder="test" [(ngModel)]="user.phone" id="phone">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Enter pasword:</mat-label>
+    <input matInput placeholder="admin" [(ngModel)]="user.pasword" id="pasword">
+  </mat-form-field>
+  <br>
+
+  <button type="submit" mat-raised-button color="primary">Submit</button>
+
+</form>
+
+</mat-card>
