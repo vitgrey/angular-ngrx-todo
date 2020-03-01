@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
@@ -19,6 +20,9 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { AuthEffects } from './store/effects/auth.effects';
 import { reducer } from './store/reducers/auth.reducers';
 import { httpInterceptorProviders } from './interceptors';
+import { AddComponent } from './components/todo/add/add.component';
+import { EditComponent } from './components/todo/edit/edit.component';
+import { ListComponent } from './components/todo/list/list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { httpInterceptorProviders } from './interceptors';
     HomeComponent,
     SignUpComponent,
     LogInComponent,
-    NavigationComponent
+    NavigationComponent,
+    AddComponent,
+    EditComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +44,7 @@ import { httpInterceptorProviders } from './interceptors';
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
+    MatTableModule,
     MatInputModule,
     EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot(reducer, {})
