@@ -37,8 +37,7 @@ import { reducer } from './store/reducers/auth.reducers';
     MatButtonModule,
     MatToolbarModule,
     MatInputModule,
-    EffectsModule.forFeature([AuthEffects]),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot(reducer, {})
   ],
   providers: [],

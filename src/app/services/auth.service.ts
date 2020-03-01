@@ -16,11 +16,13 @@ export class AuthService {
   }
 
   public login(name: string, password: string): Observable<any> {
-    return this.http.post<User>(`${environment.apiUrl}/login`, { name, password })
+    console.log('service login');
+    return this.http.post<User>(`${environment.apiUrl}/login`, { name, password });
   }
 
   public registration(name: string, surname: string, email: string, phone: number, password: string): Observable<any> {
-    return this.http.post<User>(`${environment.apiUrl}/registration`, { name, surname, email, phone, password })
+    console.log('service register');
+    return this.http.post<User>(`${environment.apiUrl}/registration`, { name, surname, email, phone, password });
   }
 
 }

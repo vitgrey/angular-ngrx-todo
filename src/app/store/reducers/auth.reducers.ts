@@ -9,7 +9,7 @@ export interface State {
 export const initialState: State = {
   isAuthenticated: false,
   user: null
-}
+};
 
 export function reducer(state = initialState, action: All): State {
   switch (action.type) {
@@ -20,8 +20,19 @@ export function reducer(state = initialState, action: All): State {
         user: {
           token: action.payload.token
         }
-      }
+      };
     }
+
+    case AuthActionTypes.SIGNUP_SUCCESS: {
+      return {
+        ...state,
+        isAuthenticated: true,
+        user: {
+          token: action.payload.token
+        }
+      };
+    }
+
     default: {
       return state;
     }
