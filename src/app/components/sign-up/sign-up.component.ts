@@ -26,7 +26,6 @@ export class SignUpComponent implements OnInit {
       phone: this.user.phone,
       password: this.user.password
     };
-    console.log(payload);
     this.store.dispatch(new SignUp(payload));
   }
 

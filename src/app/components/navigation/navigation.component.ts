@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store/app.states';
+import { LogOut } from 'src/app/store/actions/auth.actions';
 
 @Component({
   selector: 'app-navigation',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
+  }
+
+  public logOut() {
+    this.store.dispatch(new LogOut);
   }
 
 }
