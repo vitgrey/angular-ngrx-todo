@@ -18,6 +18,7 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { AuthEffects } from './store/effects/auth.effects';
 import { reducer } from './store/reducers/auth.reducers';
+import { httpInterceptorProviders } from './interceptors';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { reducer } from './store/reducers/auth.reducers';
     EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot(reducer, {})
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
