@@ -18,11 +18,12 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { AuthEffects } from './store/effects/auth.effects';
-import { reducer } from './store/reducers/auth.reducers';
+import { reducer } from './store/reducers/auth.reducer';
 import { httpInterceptorProviders } from './interceptors';
 import { AddComponent } from './components/todo/add/add.component';
 import { EditComponent } from './components/todo/edit/edit.component';
 import { ListComponent } from './components/todo/list/list.component';
+import { todoReducers } from './store/reducers/todo.reducer';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ListComponent } from './components/todo/list/list.component';
     MatTableModule,
     MatInputModule,
     EffectsModule.forRoot([AuthEffects]),
-    StoreModule.forRoot(reducer, {})
+    StoreModule.forRoot(reducer, {}),
+    StoreModule.forRoot({ todos: todoReducers })
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

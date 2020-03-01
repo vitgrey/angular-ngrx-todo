@@ -14,12 +14,12 @@ export class AddTodo implements Action {
 
 export class EditTodo implements Action {
   readonly type = TodoActionTypes.EDIT_TODO;
-  constructor(public id: number, public changes) { }
+  constructor(public id: number, public changes: any) { }
 }
 
 export class DeleteTodo implements Action {
-  readonly type = TodoActionTypes.EDIT_TODO;
+  readonly type = TodoActionTypes.DELETE_TODO;
   constructor(public id: number) { }
 }
 
-export type Actions = AddTodo | EditTodo | DeleteTodo;
+export type ActionsTodo = | AddTodo | EditTodo | DeleteTodo;
