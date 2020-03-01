@@ -20,8 +20,8 @@ export class LoggingInterceptor implements HttpInterceptor {
       ),
       finalize(() => {
         const elapsedTime = Date.now() - startTime;
-        const message = req.method + " " + req.urlWithParams + " " + status
-          + " in " + elapsedTime + "ms";
+        const message = req.method + ' ' + req.urlWithParams + ' ' + status
+          + ' in ' + elapsedTime + 'ms';
 
         this.logDetails(message);
       })
@@ -30,4 +30,4 @@ export class LoggingInterceptor implements HttpInterceptor {
   private logDetails(message: string) {
     console.log(message);
   }
-} 
+}
