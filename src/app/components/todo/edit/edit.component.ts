@@ -21,7 +21,7 @@ export class EditComponent implements OnInit {
   public onSubmit(): any {
     const payload = {
       title: this.user.title,
-      subscription: this.user.subscription
+      subscription: this.user.description
     };
     //this.store.dispatch(new EditTodo(id, payload));
   }

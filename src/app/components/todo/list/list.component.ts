@@ -11,7 +11,7 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class ListComponent implements OnInit {
 
-  public todos: Todo[]
+  public todos: Todo[] = []
 
   constructor(
     private router: Router,
@@ -19,10 +19,8 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.todoService.getAllTodos().subscribe(
-      (data) => this.todos = data
+      (data) => this.todos.push(data)
     )
-    console.log('conponent list')
-    console.log(this.todos)
   }
- 
+
 }
