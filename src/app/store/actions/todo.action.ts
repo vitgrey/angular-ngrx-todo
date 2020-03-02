@@ -1,15 +1,20 @@
 import { Action } from '@ngrx/store';
-import { ToDo } from 'src/app/models/todo.model';
 
 export enum TodoActionTypes {
+  GET_TODO = '[TODO] Get',
   ADD_TODO = '[TODO] Add',
   DELETE_TODO = '[TODO] Delete',
   EDIT_TODO = '[TODO] Edit'
 }
 
+export class GetTodo implements Action {
+  readonly type = TodoActionTypes.GET_TODO;
+  constructor() { }
+}
+
 export class AddTodo implements Action {
   readonly type = TodoActionTypes.ADD_TODO;
-  constructor(public payload: ToDo) { }
+  constructor(public payload: string) { }
 }
 
 export class EditTodo implements Action {

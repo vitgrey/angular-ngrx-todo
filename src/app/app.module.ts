@@ -8,7 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
@@ -23,7 +23,8 @@ import { httpInterceptorProviders } from './interceptors';
 import { AddComponent } from './components/todo/add/add.component';
 import { EditComponent } from './components/todo/edit/edit.component';
 import { ListComponent } from './components/todo/list/list.component';
-import { todoReducers } from './store/reducers/todo.reducer';
+import { InterceptrorService } from './interceptors/apikey.interceptor';
+import { TodoEffects } from './store/effects/todo.effects';
 
 @NgModule({
   declarations: [
@@ -48,10 +49,17 @@ import { todoReducers } from './store/reducers/todo.reducer';
     MatTableModule,
     MatInputModule,
     EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([TodoEffects]),
     StoreModule.forRoot(reducer, {}),
-    StoreModule.forRoot({ todos: todoReducers })
   ],
-  providers: [httpInterceptorProviders],
+  providers: [
+    httpInterceptorProviders,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptrorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,25 @@
-<p>add works!</p>
+<mat-card class="container">
+
+  <mat-card-title class="title">Edit</mat-card-title>
+
+  <form class="form" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="full-width">
+      <mat-label>Enter title:</mat-label>
+      <input matInput type="text" placeholder="title" [(ngModel)]="user.title" name="title" id="title">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Enter subscription:</mat-label>
+      <input matInput type="text" placeholder="subscription" [(ngModel)]="user.subscription" name="subscription"
+        id="subscription">
+    </mat-form-field>
+    <br>
+    <br>
+
+    <button type="submit" mat-raised-button color="primary">Save</button>
+    <button type="submit" mat-raised-button [routerLink]="['']"
+      routerLinkActive="router-link-active">Cancel</button>
+  </form>
+
+</mat-card>

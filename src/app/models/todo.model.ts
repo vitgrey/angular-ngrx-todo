@@ -1,5 +1,5 @@
-export class ToDo {
-  id?: number;
-  title: string;
-  subscription: string;
+export class Todo {
+  userId?: string;
+  title?: any;
+  subscription?: any;
 }

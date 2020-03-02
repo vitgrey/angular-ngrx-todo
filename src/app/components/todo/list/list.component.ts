@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { ToDo } from 'src/app/models/todo.model';
+import { Todo } from 'src/app/models/todo.model';
 import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
@@ -11,18 +11,18 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class ListComponent implements OnInit {
 
-  public todo: Observable<ToDo>;
+  public todos: Todo[]
 
-  constructor(private router: Router, private todoService: TodoService) { }
+  constructor(
+    private router: Router,
+    private todoService: TodoService) { }
 
   ngOnInit() {
-    this.todo = this.todoService.list();
+    this.todoService.getAllTodos().subscribe(
+      (data) => this.todos = data
+    )
+    console.log('conponent list')
+    console.log(this.todos)
   }
-  editRecord(id) {
-    this.router.navigate(['/edit', id]);
-  }
-  deleteRecord(id) {
-    this.todoService.remove(id);
-  }
-
+ 
 }
