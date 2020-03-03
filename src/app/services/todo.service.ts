@@ -13,7 +13,7 @@ export class TodoService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllTodos(): Observable<any> {
+  public getAllTodos(): Observable<Todo> {
     console.log('service get')
     return this.http.get<any>(`${environment.apiUrl}/todolist`)
   }

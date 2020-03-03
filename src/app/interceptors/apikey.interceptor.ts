@@ -8,19 +8,24 @@ import { paths } from './paths';
 })
 export class InterceptrorService implements HttpInterceptor {
 
+  private key = localStorage.getItem('token')
+
   constructor() {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
     if (!req.url.includes(paths.header)) {
       return next.handle(req);
     }
+
     console.log("header interceptor")
     req = req.clone({
       setHeaders: {
-        "x-apikey": "eyJhbGciOiJIUzI1NiJ9.dW5kZWZpbmVkX3VuZGVmaW5lZA.Opl9O81tN2X8IPGup1DAvesLuU9UVF1shaFA8Yvcr_s"
+        "x-apikey": this.key
       }
     });
+
     return next.handle(req);
   }
 }

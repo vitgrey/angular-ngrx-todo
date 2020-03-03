@@ -21,6 +21,7 @@ export class ListComponent implements OnInit {
     this.todoService.getAllTodos().subscribe(
       (data) => this.todos.push(data)
     )
+    console.log(this.todos)
   }
-
 }
+
