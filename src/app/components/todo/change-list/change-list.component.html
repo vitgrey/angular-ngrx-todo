@@ -1,6 +1,6 @@
 <mat-card class="container">
 
-  <mat-card-title class="title">{{mode}}</mat-card-title>
+  <mat-card-title class="title">{{mode}} todo</mat-card-title>
 
   <form class="form" (ngSubmit)="onSubmit()">
 
@@ -18,7 +18,7 @@
     <br>
 
     <button type="submit" mat-raised-button color="primary">Save</button>
-    <button type="submit" mat-raised-button [routerLink]="['']"
+    <button type="submit" mat-raised-button [routerLink]="['/list']"
       routerLinkActive="router-link-active">Cancel</button>
   </form>
 

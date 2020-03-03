@@ -21,8 +21,8 @@ export class TodoService {
     return this.http.post<Todo>(`${environment.apiUrl}/todolist`, newTodo)
   }
 
-  public editTodo(editTodo: Todo): Observable<Todo> {
-    return this.http.put<Todo>(`${environment.apiUrl}/todolist/${editTodo._id}`, editTodo)
+  public editTodo(_id, editTodo: Todo): Observable<Todo> {
+    return this.http.put<Todo>(`${environment.apiUrl}/todolist/${_id}`, editTodo)
   }
 
   public deleteTodo(_id: string): Observable<Todo> {

@@ -28,8 +28,8 @@ export class ListComponent implements OnInit {
     this.router.navigate(['/change'])
   }
 
-  public editTodo(id): void {
-    this.router.navigate(['/change'], { queryParams: { id } })
+  public editTodo(id, todo): void {
+    this.router.navigate(['/change'], { queryParams: { id, todo } })
   }
 
   public deleteTodo(id): void {
