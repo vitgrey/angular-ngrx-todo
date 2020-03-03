@@ -20,11 +20,10 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { AuthEffects } from './store/effects/auth.effects';
 import { reducer } from './store/reducers/auth.reducer';
 import { httpInterceptorProviders } from './interceptors';
-import { AddComponent } from './components/todo/add/add.component';
-import { EditComponent } from './components/todo/edit/edit.component';
 import { ListComponent } from './components/todo/list/list.component';
 import { InterceptrorService } from './interceptors/apikey.interceptor';
 import { TodoEffects } from './store/effects/todo.effects';
+import { ChangeListComponent } from './components/todo/change-list/change-list.component';
 
 @NgModule({
   declarations: [
@@ -33,9 +32,8 @@ import { TodoEffects } from './store/effects/todo.effects';
     SignUpComponent,
     LogInComponent,
     NavigationComponent,
-    AddComponent,
-    EditComponent,
-    ListComponent
+    ListComponent,
+    ChangeListComponent
   ],
   imports: [
     BrowserModule,

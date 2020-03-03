@@ -23,5 +23,20 @@ export class ListComponent implements OnInit {
     )
     console.log(this.todos)
   }
+
+  public addTodo(): void {
+    this.router.navigate(['/change'])
+  }
+
+  public editTodo(id): void {
+    this.router.navigate(['/change'], { queryParams: { id } })
+  }
+
+  public deleteTodo(id): void {
+    this.todoService.deleteTodo(id);
+    this.todoService.getAllTodos().subscribe(
+      (data) => this.todos.push(data)
+    )
+  }
 }
 
