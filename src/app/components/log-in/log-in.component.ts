@@ -23,6 +23,7 @@ export class LogInComponent implements OnInit {
       name: this.user.name,
       password: this.user.password
     };
+    console.log(payload)
     this.store.dispatch(new LogIn(payload));
   }
 

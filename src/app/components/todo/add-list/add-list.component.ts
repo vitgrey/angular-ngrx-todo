@@ -25,7 +25,7 @@ export class AddListComponent implements OnInit {
           (error) => console.log(error)
         )
       console.log(this.user)
-      this.router.navigate([('/home')])
+      this.router.navigate([('/list')])
     }
   }
 

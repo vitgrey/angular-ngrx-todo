@@ -32,7 +32,7 @@ export class ChangeListComponent implements OnInit {
         (error) => console.log(error)
       )
     }
-    this.router.navigate([('/home')])
+    this.router.navigate([('/list')])
   }
 
 }
