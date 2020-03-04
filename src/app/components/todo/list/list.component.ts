@@ -11,7 +11,7 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class ListComponent implements OnInit {
 
-  public todos: Todo[]
+  public todos: Todo[];
 
   constructor(
     private router: Router,
@@ -21,29 +21,26 @@ export class ListComponent implements OnInit {
     this.todoService.getAllTodos()
       .subscribe(
         (data: Todo[]) => this.todos = data
-      )
-    console.log(JSON.stringify(this.todos))
+      );
   }
 
   public addTodo(): void {
-    this.router.navigate(['/add'])
+    this.router.navigate(['/add']);
   }
 
-  public editTodo(_id): void {
-    console.log(_id)
-    this.router.navigate(['/change'], {queryParams: {_id}})
+  public editTodo(id): void {
+    this.router.navigate(['/change'], { queryParams: { id } });
   }
 
-  public deleteTodo(_id): void {
-    console.log(_id)
-    this.todoService.deleteTodo(_id)
+  public deleteTodo(id): void {
+    this.todoService.deleteTodo(id)
       .subscribe(
         (error) => console.log(error)
-      )
+      );
     this.todoService.getAllTodos()
       .subscribe(
         (data: Todo[]) => this.todos = data
-      )
+      );
   }
 }
 

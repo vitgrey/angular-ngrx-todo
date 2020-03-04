@@ -13,22 +13,19 @@ export class TodoService {
   constructor(private http: HttpClient) { }
 
   public getAllTodos(): Observable<Todo[]> {
-    console.log('service get All')
-    return this.http.get<Todo[]>(`${environment.apiUrl}/todolist`)
+    return this.http.get<Todo[]>(`${environment.apiUrl}/todolist`);
   }
 
   public addTodo(newTodo: Todo): Observable<Todo> {
-    console.log('add todo')
-    console.log(newTodo)
-    return this.http.post<Todo>(`${environment.apiUrl}/todolist`, newTodo)
+    return this.http.post<Todo>(`${environment.apiUrl}/todolist`, newTodo);
   }
 
-  public editTodo(_id, editTodo: Todo): Observable<Todo> {
-    return this.http.put<Todo>(`${environment.apiUrl}/todolist/${_id}`, editTodo)
+  public editTodo(id, editTodo: Todo): Observable<Todo> {
+    return this.http.put<Todo>(`${environment.apiUrl}/todolist/${id}`, editTodo);
   }
 
-  public deleteTodo(_id: string): Observable<Todo> {
-    return this.http.delete<Todo>(`${environment.apiUrl}/todolist/${_id}`)
+  public deleteTodo(id: string): Observable<Todo> {
+    return this.http.delete<Todo>(`${environment.apiUrl}/todolist/${id}`);
   }
 
 }

@@ -12,7 +12,7 @@ import { AddListComponent } from './components/todo/add-list/add-list.component'
 const routes: Routes = [
   { path: 'log-in', component: LogInComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: 'change', component: ChangeListComponent,canActivate: [AuthGuard] },
+  { path: 'change', component: ChangeListComponent, canActivate: [AuthGuard] },
   { path: 'list', component: ListComponent, canActivate: [AuthGuard] },
   { path: 'add', component: AddListComponent, canActivate: [AuthGuard] },
   { path: '', component: ListComponent, canActivate: [AuthGuard] },

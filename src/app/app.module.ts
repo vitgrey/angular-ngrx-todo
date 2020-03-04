@@ -20,7 +20,6 @@ import { AuthEffects } from './store/effects/auth.effects';
 import { reducer } from './store/reducers/auth.reducer';
 import { httpInterceptorProviders } from './interceptors';
 import { ListComponent } from './components/todo/list/list.component';
-import { InterceptrorService } from './interceptors/apikey.interceptor';
 import { ChangeListComponent } from './components/todo/change-list/change-list.component';
 import { AddListComponent } from './components/todo/add-list/add-list.component';
 
@@ -49,12 +48,7 @@ import { AddListComponent } from './components/todo/add-list/add-list.component'
     StoreModule.forRoot(reducer, {}),
   ],
   providers: [
-    httpInterceptorProviders,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: InterceptrorService,
-      multi: true
-    }
+    httpInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })

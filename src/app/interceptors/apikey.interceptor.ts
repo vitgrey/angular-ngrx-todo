@@ -6,9 +6,9 @@ import { paths } from './paths';
 @Injectable({
   providedIn: 'root'
 })
-export class InterceptrorService implements HttpInterceptor {
+export class ApikeyInterceptror implements HttpInterceptor {
 
-  private key = localStorage.getItem('token')
+  private key = localStorage.getItem('token');
 
   constructor() {
   }
@@ -19,10 +19,9 @@ export class InterceptrorService implements HttpInterceptor {
       return next.handle(req);
     }
 
-    console.log("header interceptor")
     req = req.clone({
       setHeaders: {
-        "x-apikey": this.key
+        'x-apikey': this.key
       }
     });
 

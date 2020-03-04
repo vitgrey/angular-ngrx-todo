@@ -23,9 +23,8 @@ export class AddListComponent implements OnInit {
       this.todoService.addTodo(this.user)
         .subscribe(
           (error) => console.log(error)
-        )
-      console.log(this.user)
-      this.router.navigate([('/list')])
+        );
+      this.router.navigate([('/list')]);
     }
   }
 

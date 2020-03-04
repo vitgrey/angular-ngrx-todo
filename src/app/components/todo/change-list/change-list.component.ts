@@ -21,18 +21,18 @@ export class ChangeListComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((params: Params) => {
-      this.paramId = params._id;
-    })
+      this.paramId = params.id;
+    });
   }
 
   public editTodo(form) {
     if (form) {
       this.todoService.editTodo(this.paramId, this.user)
-      .subscribe(
-        (error) => console.log(error)
-      )
+        .subscribe(
+          (error) => console.log(error)
+        );
     }
-    this.router.navigate([('/list')])
+    this.router.navigate([('/list')]);
   }
 
 }

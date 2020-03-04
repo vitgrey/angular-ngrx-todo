@@ -22,11 +22,9 @@ export class AuthEffects {
       ofType(AuthActionTypes.LOGIN),
       map((action: LogIn) => action.payload),
       switchMap(payload => {
-        console.log('login effect')
         return this.authService.login(payload.name, payload.password)
           .pipe(
             map((user) => {
-              console.log(user)
               return new LogInSuccess({ token: user.token });
             })
           );
