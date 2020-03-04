@@ -11,16 +11,17 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class ListComponent implements OnInit {
 
-  public todos: Todo[] = []
+  public todos: Todo[]
 
   constructor(
     private router: Router,
     private todoService: TodoService) { }
 
-  ngOnInit() {
-    this.todoService.getAllTodos().subscribe(
-      (data) => this.todos.push(data)
-    )
+  ngOnInit(): void {
+    this.todoService.getAllTodos()
+      .subscribe(
+        (data: Todo[]) => this.todos = data
+      )
     console.log(this.todos)
   }
 
@@ -35,7 +36,7 @@ export class ListComponent implements OnInit {
   public deleteTodo(id): void {
     this.todoService.deleteTodo(id);
     this.todoService.getAllTodos().subscribe(
-      (data) => this.todos.push(data)
+      (data) => this.todos.push()
     )
   }
 }

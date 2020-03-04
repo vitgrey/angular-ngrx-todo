@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
   { path: 'change', component: ChangeListComponent },
   { path: 'list', component: ListComponent },
+  { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '/', canActivate: [AuthGuard] }
 ];
