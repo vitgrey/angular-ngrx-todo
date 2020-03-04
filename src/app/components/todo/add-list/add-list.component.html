@@ -1,8 +1,8 @@
 <mat-card class="container">
 
-  <mat-card-title class="title">Edit todo</mat-card-title>
+  <mat-card-title class="title">Add todo</mat-card-title>
 
-  <form class="form">
+  <form id="form" class="form" #form="ngForm" (ngSubmit)="addNewTodo(form)">
 
     <mat-form-field class="full-width">
       <mat-label>Enter title:</mat-label>

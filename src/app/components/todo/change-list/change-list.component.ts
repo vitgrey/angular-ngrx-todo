@@ -11,9 +11,6 @@ import { TodoService } from 'src/app/services/todo.service';
 export class ChangeListComponent implements OnInit {
 
   public user: Todo = new Todo();
-  public mode: string;
-  public todoId: string;
-  public todo;
 
   constructor(
     private router: Router,
@@ -22,17 +19,7 @@ export class ChangeListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe((params: Params) => {
-      this.todoId = params.id;
-      this.todo = params.todo;
-      if (this.todoId) {
-        this.todoService.editTodo(this.todoId, this.todo)
-        this.mode = 'Edit';
-      }
-      else {
-        this.mode = 'Add'
-      }
-    })
+    
   }
 
 }

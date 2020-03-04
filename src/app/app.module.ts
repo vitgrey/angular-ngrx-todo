@@ -24,6 +24,7 @@ import { ListComponent } from './components/todo/list/list.component';
 import { InterceptrorService } from './interceptors/apikey.interceptor';
 import { TodoEffects } from './store/effects/todo.effects';
 import { ChangeListComponent } from './components/todo/change-list/change-list.component';
+import { AddListComponent } from './components/todo/add-list/add-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ChangeListComponent } from './components/todo/change-list/change-list.c
     LogInComponent,
     NavigationComponent,
     ListComponent,
-    ChangeListComponent
+    ChangeListComponent,
+    AddListComponent
   ],
   imports: [
     BrowserModule,

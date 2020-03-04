@@ -4,8 +4,9 @@
 
 <div class="container">
   <div class="card" *ngFor="let todo of todos; let i = index">
-    <mat-card class="background">
+    <mat-card>
       <span>{{i+1}}</span>
+      <span>{{todo._id}}</span>
       <mat-card-header>
         <mat-card-title>{{todo.title}}</mat-card-title>
       </mat-card-header>
@@ -14,7 +15,7 @@
       </mat-card-content>
       <mat-card-actions>
         <button mat-button (click)="editTodo(i, todo)">EDIT</button>
-        <button mat-button (click)="deleteTodo(i)">DELETE</button>
+        <button mat-button (click)="deleteTodo(todo._id)">DELETE</button>
       </mat-card-actions>
     </mat-card>
   </div>

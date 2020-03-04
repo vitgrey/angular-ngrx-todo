@@ -22,22 +22,28 @@ export class ListComponent implements OnInit {
       .subscribe(
         (data: Todo[]) => this.todos = data
       )
-    console.log(this.todos)
+    console.log(JSON.stringify(this.todos))
   }
 
   public addTodo(): void {
-    this.router.navigate(['/change'])
+    this.router.navigate(['/add'])
   }
 
   public editTodo(id, todo): void {
-    this.router.navigate(['/change'], { queryParams: { id, todo } })
+    this.router.navigate(['/change'])
   }
 
-  public deleteTodo(id): void {
-    this.todoService.deleteTodo(id);
-    this.todoService.getAllTodos().subscribe(
-      (data) => this.todos.push()
-    )
+  public deleteTodo(_id): void {
+    console.log(_id)
+    this.todoService.deleteTodo(_id)
+      .subscribe(
+        (error) => console.log(error)
+      )
+
+    this.todoService.getAllTodos()
+      .subscribe(
+        (data: Todo[]) => this.todos = data
+      )
   }
 }
 

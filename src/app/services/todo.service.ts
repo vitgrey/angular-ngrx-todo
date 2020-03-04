@@ -18,6 +18,8 @@ export class TodoService {
   }
 
   public addTodo(newTodo: Todo): Observable<Todo> {
+    console.log('add todo')
+    console.log(newTodo)
     return this.http.post<Todo>(`${environment.apiUrl}/todolist`, newTodo)
   }
 
@@ -26,7 +28,7 @@ export class TodoService {
   }
 
   public deleteTodo(_id: string): Observable<Todo> {
-    return this.http.delete<Todo>(`$${environment.apiUrl}/todolist/${_id}`)
+    return this.http.delete<Todo>(`${environment.apiUrl}/todolist/${_id}`)
   }
 
 }

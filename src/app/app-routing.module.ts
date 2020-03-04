@@ -8,12 +8,14 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { ChangeListComponent } from './components/todo/change-list/change-list.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ListComponent } from './components/todo/list/list.component';
+import { AddListComponent } from './components/todo/add-list/add-list.component';
 
 const routes: Routes = [
   { path: 'log-in', component: LogInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'change', component: ChangeListComponent },
   { path: 'list', component: ListComponent },
+  { path: 'add', component: AddListComponent },
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '/', canActivate: [AuthGuard] }
