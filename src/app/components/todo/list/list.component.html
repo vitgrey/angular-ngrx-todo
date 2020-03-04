@@ -1,9 +1,19 @@
-<div>
-  <button class="add" mat-raised-button color="primary" (click)="addTodo()">Add</button>
+<div class="wrapper">
+  <div>
+    <button class="add" mat-raised-button color="primary" (click)="addTodo()">Add</button>
+  </div>
+  <div>
+    <form class="search">
+      <mat-form-field class="full-width">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Searching..." [(ngModel)]="query">
+      </mat-form-field>
+    </form>
+  </div>
 </div>
 
 <div class="container">
-  <div class="card" *ngFor="let todo of todos; let i = index">
+  <div class="card" *ngFor="let todo of todos | search : query; i as index">
     <mat-card>
       <span>{{i+1}}</span><br>
       <span style="visibility: hidden">{{todo._id}}</span>

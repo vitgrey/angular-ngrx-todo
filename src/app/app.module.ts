@@ -22,6 +22,7 @@ import { httpInterceptorProviders } from './interceptors';
 import { ListComponent } from './components/todo/list/list.component';
 import { ChangeListComponent } from './components/todo/change-list/change-list.component';
 import { AddListComponent } from './components/todo/add-list/add-list.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AddListComponent } from './components/todo/add-list/add-list.component'
     NavigationComponent,
     ListComponent,
     ChangeListComponent,
-    AddListComponent
+    AddListComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
