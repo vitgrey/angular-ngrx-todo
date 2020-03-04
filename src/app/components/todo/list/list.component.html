@@ -5,8 +5,8 @@
 <div class="container">
   <div class="card" *ngFor="let todo of todos; let i = index">
     <mat-card>
-      <span>{{i+1}}</span>
-      <span>{{todo._id}}</span>
+      <span>{{i+1}}</span><br>
+      <span style="visibility: hidden" >{{todo._id}}</span>
       <mat-card-header>
         <mat-card-title>{{todo.title}}</mat-card-title>
       </mat-card-header>
@@ -14,7 +14,7 @@
         <p>{{todo.description}}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button (click)="editTodo(i, todo)">EDIT</button>
+        <button mat-button (click)="editTodo(todo._id)">EDIT</button>
         <button mat-button (click)="deleteTodo(todo._id)">DELETE</button>
       </mat-card-actions>
     </mat-card>

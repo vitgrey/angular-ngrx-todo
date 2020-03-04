@@ -29,8 +29,9 @@ export class ListComponent implements OnInit {
     this.router.navigate(['/add'])
   }
 
-  public editTodo(id, todo): void {
-    this.router.navigate(['/change'])
+  public editTodo(_id): void {
+    console.log(_id)
+    this.router.navigate(['/change'], {queryParams: {_id}})
   }
 
   public deleteTodo(_id): void {
@@ -39,7 +40,6 @@ export class ListComponent implements OnInit {
       .subscribe(
         (error) => console.log(error)
       )
-
     this.todoService.getAllTodos()
       .subscribe(
         (data: Todo[]) => this.todos = data
