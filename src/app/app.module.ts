@@ -23,6 +23,7 @@ import { ListComponent } from './components/todo/list/list.component';
 import { ChangeListComponent } from './components/todo/change-list/change-list.component';
 import { AddListComponent } from './components/todo/add-list/add-list.component';
 import { SearchPipe } from './pipes/search.pipe';
+import { OneComponent } from './components/todo/one/one.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SearchPipe } from './pipes/search.pipe';
     ListComponent,
     ChangeListComponent,
     AddListComponent,
-    SearchPipe
+    SearchPipe,
+    OneComponent
   ],
   imports: [
     BrowserModule,

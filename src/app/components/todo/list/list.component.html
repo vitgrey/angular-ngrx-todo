@@ -14,7 +14,7 @@
 
 <div class="container">
   <div class="card" *ngFor="let todo of todos | search : query">
-    <mat-card>
+    <mat-card (click)="oneTodo(todo.title, todo.description)">
       <span></span><br>
       <span style="visibility: hidden">{{todo._id}}</span>
       <mat-card-header>

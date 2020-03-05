@@ -25,6 +25,10 @@ export class ListComponent implements OnInit {
       );
   }
 
+  public oneTodo(title: string, description: string): void {
+    this.router.navigate(['/one'], { queryParams: { title, description } });
+  }
+
   public addTodo(): void {
     this.router.navigate(['/add']);
   }
