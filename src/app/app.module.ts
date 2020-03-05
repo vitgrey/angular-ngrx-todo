@@ -7,8 +7,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
@@ -45,8 +48,11 @@ import { OneComponent } from './components/todo/one/one.component';
     HttpClientModule,
     MatCardModule,
     MatButtonModule,
+    ScrollingModule,
     MatToolbarModule,
+    MatProgressSpinnerModule,
     MatTableModule,
+    MatPaginatorModule,
     MatInputModule,
     EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot(reducer, {}),

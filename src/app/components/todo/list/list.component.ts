@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Todo } from 'src/app/models/todo.model';
 import { TodoService } from 'src/app/services/todo.service';
@@ -11,7 +10,7 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class ListComponent implements OnInit {
 
-  public query: string = '';
+  public query = '';
   public todos: Todo[] = [];
 
   constructor(
@@ -21,8 +20,9 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     this.todoService.getAllTodos()
       .subscribe(
-        (data: Todo[]) => this.todos = data
-      );
+        (data: Todo[]) => {
+          this.todos = data;
+        });
   }
 
   public oneTodo(title: string, description: string): void {

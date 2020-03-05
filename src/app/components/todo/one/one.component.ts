@@ -18,8 +18,8 @@ export class OneComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((params: Params) => {
       this.title = params.title;
-      this.description = params.description
-    })
+      this.description = params.description;
+    });
   }
 
   public comeBack(): void {
