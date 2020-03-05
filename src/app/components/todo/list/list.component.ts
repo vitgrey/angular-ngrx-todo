@@ -11,7 +11,8 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class ListComponent implements OnInit {
 
-  public todos: Todo[];
+  public query: string = '';
+  public todos: Todo[] = [];
 
   constructor(
     private router: Router,

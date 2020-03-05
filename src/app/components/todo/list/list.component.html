@@ -6,16 +6,16 @@
     <form class="search">
       <mat-form-field class="full-width">
         <mat-label>Search</mat-label>
-        <input matInput placeholder="Searching..." [(ngModel)]="query">
+        <input matInput placeholder="Searching..." [(ngModel)]="query" name="query">
       </mat-form-field>
     </form>
   </div>
 </div>
 
 <div class="container">
-  <div class="card" *ngFor="let todo of todos | search : query; i as index">
+  <div class="card" *ngFor="let todo of todos | search : query">
     <mat-card>
-      <span>{{i+1}}</span><br>
+      <span></span><br>
       <span style="visibility: hidden">{{todo._id}}</span>
       <mat-card-header>
         <mat-card-title>{{todo.title}}</mat-card-title>
