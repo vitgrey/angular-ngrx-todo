@@ -2,20 +2,20 @@
 
 	<mat-card-title class="title">Sign in</mat-card-title>
 
-	<form class="form" (ngSubmit)="onSubmit()">
+	<form class="form" [formGroup]="form.formGroup" (ngSubmit)="onSubmit()">
 
 		<mat-form-field class="full-width">
 			<mat-label>Enter name:</mat-label>
-			<input matInput type="text" placeholder="test" [(ngModel)]="user.name" name="name" id="name">
+			<input matInput type="text" placeholder="test" formControlName="name" name="name" id="name">
 		</mat-form-field>
 
 		<mat-form-field class="full-width">
 			<mat-label>Enter pasword:</mat-label>
-			<input matInput type="password" placeholder="admin" [(ngModel)]="user.password" name="password" id="password">
+			<input matInput type="password" placeholder="admin" formControlName="password" name="password" id="password">
 		</mat-form-field>
 		<br>
 		<br>
-		<button type="submit" mat-raised-button color="primary">Login</button>
+		<button type="submit" mat-raised-button color="primary" [disabled]="form.formGroup.invalid">Login</button>
 		<button type="submit" mat-raised-button [routerLink]="['/sign-up']"
 			routerLinkActive="router-link-active">Registration</button>
 	</form>

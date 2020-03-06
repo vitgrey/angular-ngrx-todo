@@ -7,9 +7,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
-import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { EffectsModule } from '@ngrx/effects';
@@ -45,10 +46,11 @@ import { OneComponent } from './components/todo/one/one.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
     HttpClientModule,
     MatCardModule,
     MatButtonModule,
-    ScrollingModule,
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatTableModule,

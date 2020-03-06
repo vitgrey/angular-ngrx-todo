@@ -10,6 +10,7 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class ListComponent implements OnInit {
 
+  public page = 1;
   public query = '';
   public todos: Todo[] = [];
 

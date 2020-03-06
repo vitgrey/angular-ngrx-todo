@@ -13,7 +13,7 @@
 </div>
 
 <div class="container">
-  <div class="card" *ngFor="let todo of todos | search : query">
+  <div class="card" *ngFor="let todo of todos | search : query | paginate: { itemsPerPage: 6, currentPage: page }">
     <mat-card (click)="oneTodo(todo.title, todo.description)">
       <span style="visibility: hidden">{{todo._id}}</span>
       <mat-card-header>
@@ -28,4 +28,8 @@
       </mat-card-actions>
     </mat-card>
   </div>
+</div>
+
+<div class="footer">
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>
